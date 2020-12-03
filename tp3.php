@@ -166,9 +166,6 @@ for($i=0;$i<count($produits);$i++){
     }
     echo'<tr><td>'.$produits[$i]["reference"].'</td><td>'.$produits[$i]["designation"].'</td><td>'.$produits[$i]["prix_unitaire"].'</td><td>'.$produits[$i]["quantite"].'</td><td>'.$montant.'</td></tr>';
 
-    /*echo'<pre>';
-    print_r($val_array);
-    echo'</pre>';*/
 }
 
 
