@@ -139,6 +139,41 @@ foreach ($personnel as $tab){
         echo '<br>'.$cle.' => '.$var;
     }
 }
+echo'<br><b>Exercice 5:</b>';
+$produits=array(
+    array("reference"=>'ref001',"designation"=>'hp',"prix_unitaire"=>7500,"quantite"=>13),
+    array("reference"=>'ref002',"designation"=>'mac',"prix_unitaire"=>12000,"quantite"=>9),
+    array("reference"=>'ref003',"designation"=>'toshiba',"prix_unitaire"=>8500,"quantite"=>12),
+    array("reference"=>'ref004',"designation"=>'samsung',"prix_unitaire"=>9000,"quantite"=>8),
+);
+$taux=array(
+        "hp"=>0.8,
+    "mac"=>0.9,
+    "toshiba"=>0.7,
+    "samsung"=>0.6,
+);
+echo'<table border="black">';
+echo'<tr><th>Reference</th><th>designation</th><th>Prix unitaire (DH)</th><th>Quantite</th><th>Montant(DH)</th></tr>';
+for($i=0;$i<count($produits);$i++){
+    if($produits[$i]["prix_unitaire"]>10){
+        foreach($taux as $cle=>$val){
+            if($cle==$produits[$i]["designation"]){
+                $montant=$val*$produits[$i]["prix_unitaire"];
+            }
+        }
+    }else{
+        $montant=$produits[$i]['prix_unitaire'];
+    }
+    echo'<tr><td>'.$produits[$i]["reference"].'</td><td>'.$produits[$i]["designation"].'</td><td>'.$produits[$i]["prix_unitaire"].'</td><td>'.$produits[$i]["quantite"].'</td><td>'.$montant.'</td></tr>';
+
+    /*echo'<pre>';
+    print_r($val_array);
+    echo'</pre>';*/
+}
+
+
+
+echo'</table>';
 
 ?>
 </body>
